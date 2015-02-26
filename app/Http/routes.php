@@ -11,6 +11,23 @@
 |
 */
 
+
+Route::group(['prefix' => 'hello'], function()
+{
+	Route::get('/', 'HelloController@index');
+
+	Route::get('route', function()
+	{
+		return 'Hello World!!';
+	});
+
+	Route::get('view', function()
+	{
+		return view('hello.index');
+	});
+});
+
+// 以下は初期ルーティング
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
